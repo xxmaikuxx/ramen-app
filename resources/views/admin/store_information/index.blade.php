@@ -16,9 +16,18 @@
         </header>
 
         <main>
-            <form action="{{ ('') }}" method="post">
+            <form action="{{ ('admin.index') }}" method="post">
                 @csrf
-                <fieldset>
+                <div>
+                    <label>店名/支店名</label>
+                    <br>
+                    <input type="text" name="shop_name">
+                    <br>
+                </div>
+                <button type="submit" class="btn btn-success">
+                        {{ __('変更') }}
+                </button>
+                <!-- <fieldset>
 
                 <div>
                     <label>店名/支店名</label>
@@ -218,7 +227,7 @@
                     <button type="submit" class="btn btn-success">
                         {{ __('変更') }}
                     </button>
-                </fieldset>
+                </fieldset> -->
             </form>
         </main>
     </body>
