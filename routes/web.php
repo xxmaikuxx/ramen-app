@@ -34,4 +34,4 @@ Route::view('/admin/register', 'admin/register');
 Route::post('/admin/register', [RegisterController::class, 'register']);
 Route::view('/admin/home', 'admin/home')->middleware('auth:admin');
 Route::get('/admin/store_information', [Store_informationController::class, 'store_information'])->name('admin.store_information.index');
-Route::post('/admin/store_information', [PostController::class,'store_information.index'])->name('admin.store_information.index');
+Route::post('/admin/post', [PostController::class,'store'])->name('admin.store_information.index');

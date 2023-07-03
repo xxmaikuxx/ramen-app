@@ -16,7 +16,7 @@
         </header>
 
         <main>
-            <form action="{{ ('admin.index') }}" method="post">
+            <form action="{{ ('admin.store_information.index') }}" method="post">
                 @csrf
                 <div>
                     <label>店名/支店名</label>
