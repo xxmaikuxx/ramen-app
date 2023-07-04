@@ -9,6 +9,6 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function store(Request $request){
-        return redirect()->route('admin.store_information.index');
+        return redirect()->route('store_information.index');
     }
 }
