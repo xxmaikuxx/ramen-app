@@ -19,7 +19,7 @@
             <form action="{{ route('store_information.index') }}" method="post">
                 @csrf
                 <div>
-                    <label>店名/支店名</label>
+                    <label for = "shop_name">店名/支店名</label>
                     <br>
                     <input type="text" name="shop_name">
                     <br>
