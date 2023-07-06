@@ -27,6 +27,7 @@ return new class extends Migration
             $table->integer('end_time');
             $table->integer('rest_start_time')->nullable();
             $table->integer('rest_end_time')->nullable();
+            $table->text('menu');
             $table->string('url')->nullable();
             $table->text('introduction')->nullable();
             $table->timestamps();

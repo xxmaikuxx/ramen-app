@@ -9,8 +9,11 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     public function store(Request $request){
+
+        dd($request);
+        
         $post = new Post();
-        $post->shop_name = $request->input('shop_name');
+        $post->name = $request->input('name');
               
         return redirect()->route('store_information.index');
     }
