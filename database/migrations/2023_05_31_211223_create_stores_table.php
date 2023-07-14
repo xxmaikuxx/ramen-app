@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->integer('admin_id');
             $table->string('name');
-            $table->integer('prefecture');
             $table->integer('city');
             $table->string('address1');
             $table->string('address2')->nullable();
