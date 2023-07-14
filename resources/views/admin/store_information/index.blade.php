@@ -20,6 +20,8 @@
                 @csrf
 
                 <fieldset>
+                    
+                    <h1>{{Auth::id()}}</h1>
 
                 <div>
                     <label for = "name">店名/支店名</label>
