@@ -36,7 +36,6 @@ Route::view('/admin/home', 'admin/home')->middleware('auth:admin');
 Route::get('/admin/store_information', [Store_informationController::class, 'store_information'])->name('admin.store_information.index');
 Route::post('/admin/store_information', [Store_informationController::class,'store'])->name('store_information.index');
 Route::middleware('auth:admin')->group(function () {
-    Route::get('/admin/store_information',function(){
-        return view('admin.store_information.index');
-        })->name('admin.store_information');
+    Route::get('/admin/mypage',function(){ return view('admin.mypage');})->name('admin.mypage');
+    Route::get('/admin/store_information', function(){ return view('admin.store_information.index');})->name('admin.store_information.index');
     });
