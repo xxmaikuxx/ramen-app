@@ -4,16 +4,16 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Store_image;
+
 
 class ImageController extends Controller
 {
-    public function upload(Request $request) {
-        $dir = 'sample';
-        
-        $file_name = $request->file('image')->getClientOriginalName();
+    public function store(Request $request) {
+    
+    $path = $request->file('store_images')->store('public');
+    $store_url = basename($path);
 
-        $request->file('image')->store('public/' . $dir, $file_name);
-
-        return redirect('/');
+    return redirect()->route('store_information.index');
     }
 }

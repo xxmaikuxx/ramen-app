@@ -16,7 +16,7 @@
         </header>
 
         <main>
-            <form action="{{ route('store_information.index') }}" method="post">
+            <form action="{{ route('admin.store_information.index') }}" method="post"  enctype="multipart/form-data">
                 @csrf
 
                 <fieldset>
@@ -159,16 +159,16 @@
                 <div>
                     <label for = "store_images">画像</label>
                     <br>
-                    <form method="POST" action="/upload" enctype="multipart/form-data">
-                        @csrf
                         <input type="file" name="store_images">
                         <button>アップロード</button>
-                    </form>
+                    </div></form>
                     <br>
-                </div>
+
+                <div>
                 <button type="submit" class="btn btn-success">
                         {{ __('変更') }}
                 </button>
+                </div>
 
                 </fieldset>
             </form>
