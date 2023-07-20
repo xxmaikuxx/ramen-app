@@ -40,4 +40,3 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/admin/mypage',function(){ return view('admin.mypage');})->name('admin.mypage');
     Route::get('/admin/store_information', function(){ return view('admin.store_information.index');})->name('admin.store_information.index');
     });
-Route::post('/admin/store_information', [Store_informationController::class, 'upload']);

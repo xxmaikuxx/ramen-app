@@ -161,7 +161,7 @@
                     <br>
                         <input type="file" name="store_images">
                         <button>アップロード</button>
-                    </div></form>
+                    </div>
                     <br>
 
                 <div>
