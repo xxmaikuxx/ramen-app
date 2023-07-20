@@ -40,7 +40,7 @@ class Store_informationController extends Controller
         
         $store_vacation = new Store_vacation();
         $store_vacation->store_id = $store_id;
-        $store_vacation->day_of_week = $request->imput('store_vacation');
+        $store_vacation->day_of_week = $request->input('store_vacation');
         $store_vacation->save();
 
         $store_facility = new Store_facility();
@@ -48,12 +48,8 @@ class Store_informationController extends Controller
         $store_facility->facility = $request->input('store_facilities');
         $store_facility->save();
 
-        return redirect()->route('store_information.index');
-    }
-
-    public function upload(Request $request)
-    {
         $store_image = new Store_image();
+        $store_image->store_id = $store_id;
         $store_image->image_url = $request->file('store_images')->store('/public');
         $store_image->save();
 
@@ -61,4 +57,3 @@ class Store_informationController extends Controller
     }
 
 }
-
