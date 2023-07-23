@@ -7,7 +7,7 @@ use App\http\Controllers\admin\MypageController as AdminMypageController;
 use App\Http\Controllers\admin\LoginController;
 use App\Http\Controllers\admin\RegisterController;
 use App\Http\Controllers\admin\Store_informationController;
-use App\Http\Controllers\admin\ImageController;
+use App\http\Controllers\admin\Store_listController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,8 +35,9 @@ Route::view('/admin/register', 'admin/register');
 Route::post('/admin/register', [RegisterController::class, 'register']);
 Route::view('/admin/home', 'admin/home')->middleware('auth:admin');
 Route::get('/admin/store_information', [Store_informationController::class, 'store_information'])->name('admin.store_information.index');
-Route::post('/admin/store_information', [Store_informationController::class,'store'])->name('store_information.index');
 Route::middleware('auth:admin')->group(function () {
     Route::get('/admin/mypage',function(){ return view('admin.mypage');})->name('admin.mypage');
     Route::get('/admin/store_information', function(){ return view('admin.store_information.index');})->name('admin.store_information.index');
+    Route::post('/admin/store_information', [Store_informationController::class,'store'])->name('store_information.index');
+    Route::get('/admin/storelist', [Store_listController::class, 'store_list'])->name('admin.storelist');
     });

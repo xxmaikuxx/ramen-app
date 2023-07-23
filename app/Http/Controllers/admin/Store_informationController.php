@@ -21,7 +21,7 @@ class Store_informationController extends Controller
         $store = new Store();
 
         $store->name = $request->input('name');
-        $store->admin_id = 1;
+        $store->admin_id = Auth::id();
         $store->city = $request->input('city');
         $store->address1 = $request->input('address1');
         $store->address2 = $request->input('address2');
@@ -37,16 +37,20 @@ class Store_informationController extends Controller
         $store->save();
 
         $store_id = $store->id;
-        
-        $store_vacation = new Store_vacation();
-        $store_vacation->store_id = $store_id;
-        $store_vacation->day_of_week = $request->input('store_vacation');
-        $store_vacation->save();
+       
+        foreach($request->store_vacation as $value){
+            $store_vacation = new Store_vacation();
+            $store_vacation->store_id = $store_id;
+            $store_vacation->day_of_week = $value;
+            $store_vacation->save();
+        };
 
-        $store_facility = new Store_facility();
-        $store_facility->store_id = $store_id;
-        $store_facility->facility = $request->input('store_facilities');
-        $store_facility->save();
+        foreach($request->store_facilities as $value){
+            $store_facility = new Store_facility();
+            $store_facility->store_id = $store_id;
+            $store_facility->facility = $value;
+            $store_facility->save();
+        };
 
         $store_image = new Store_image();
         $store_image->store_id = $store_id;

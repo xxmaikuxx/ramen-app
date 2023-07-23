@@ -16,7 +16,7 @@
         </header>
 
         <main>
-            <form action="{{ route('admin.store_information.index') }}" method="post"  enctype="multipart/form-data">
+            <form action="{{ route('admin.edit') }}" method="post"  enctype="multipart/form-data">
                 @csrf
 
                 <fieldset>
@@ -164,7 +164,7 @@
 
                 <div>
                 <button type="submit" class="btn btn-success">
-                        {{ __('登録') }}
+                        {{ __('変更') }}
                 </button>
                 </div>
 
